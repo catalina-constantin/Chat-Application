@@ -61,22 +61,32 @@ socket.on('user-joined', data => {
     onUsers.innerText = data.onUsers
 })
 
-socket.on('receive',data =>{
+socket.on('receive',data => {
     appendMessage(data.message,data.name,'left',data.id)
 })
 
-const likedMessage = (id)=>{
+const likedMessage = (id)=> {
     const likedElement = document.getElementById(id);
-    likedElement.classList.add('liked');
-    socket.emit('liked',id)
+    if(likedElement.classList.contains('liked')) {
+        likedElement.classList.remove('liked');
+        socket.emit('unliked', id);
+    } else {
+        likedElement.classList.add('liked');
+        socket.emit('liked',id)
+    }
 }
 
-socket.on('msg-like',id =>{
+socket.on('msg-like',id => { 
     const likedElement = document.getElementById(id);
     likedElement.classList.add('liked');
 })
 
-socket.on('disconnected',data =>{
+socket.on('msg-unlike',id => { 
+    const likedElement = document.getElementById(id);
+    likedElement.classList.remove('liked');
+})
+
+socket.on('disconnected',data => {
     appendAction(`${data.name} left the Chat`,'center')
     onUsers.innerHTML = data.onUsers
 })
