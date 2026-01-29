@@ -1,0 +1,59 @@
+@use 'variables';
+
+.message {
+  font-family: variables.$font-family-base;
+  color: variables.$color-white;
+  background-color: variables.$color-primary;
+  max-width: 35%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-bottom: variables.$space-5 - 0;
+  word-wrap: break-word;
+  padding: variables.$space-3 variables.$space-4;
+
+  span {
+    font-size: variables.$font-size-sm;
+    color: rgba(255, 255, 255, 0.637);
+  }
+
+  p {
+    margin: 0;
+    margin-top: 2px;
+    font-size: variables.$font-size-base;
+  }
+
+  i {
+    position: absolute;
+    bottom: -5px;
+    color: variables.$color-like;
+    font-size: variables.$font-size-like;
+    display: none;
+  }
+
+  &.center {
+    align-self: center;
+    border-radius: variables.$radius-md;
+    background-color: variables.$color-primary-ghost;
+    color: variables.$color-text;
+    text-align: center;
+
+    p { font-size: variables.$font-size-sm; }
+  }
+
+  &.liked {
+    i { display: flex; }
+  }
+}
+
+.right {
+  border-radius: variables.$radius-lg;
+  border-bottom-right-radius: 0;
+  align-self: flex-end;
+}
+
+.left {
+  border-radius: variables.$radius-lg;
+  border-bottom-left-radius: 0;
+  align-self: flex-start;
+}

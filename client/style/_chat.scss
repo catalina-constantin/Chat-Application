@@ -1,0 +1,136 @@
+@use 'variables';
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(to right, variables.$grad-start, variables.$grad-end);
+}
+
+.chatContainer {
+  position: relative;
+  max-width: variables.$container-max-width;
+  background-color: variables.$color-white;
+  box-shadow: variables.$shadow-strong;
+  height: variables.$chat-height;
+  border-radius: 0px;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  padding-bottom: variables.$space-7;
+  flex-direction: column;
+}
+
+.chatHead {
+  width: 100%;
+  display: flex;
+  background-color: variables.$color-primary;
+  align-items: center;
+
+  p {
+    margin: variables.$space-4 auto;
+    text-align: center;
+    font-family: variables.$font-family-base;
+    color: variables.$color-white;
+    font-weight: variables.$font-weight-medium;
+  }
+}
+
+.usersCount {
+  color: variables.$color-white;
+  align-items: center;
+  position: absolute;
+  right: variables.$space-4;
+
+  span {
+    font-family: variables.$font-family-base;
+    letter-spacing: 2px;
+    margin-left: variables.$space-1;
+  }
+
+  i { font-size: 14px; }
+}
+
+#messageForm {
+  display: flex;
+  max-width: (variables.$container-max-width - variables.$space-4*2);
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  margin: 5px 5px; 
+  width: 100%;
+
+  input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: variables.$space-3 60px variables.$space-3 variables.$space-4;
+    font-weight: variables.$font-weight-medium;
+    font-family: variables.$font-family-base;
+    border: 1px solid variables.$color-primary-2;
+    color: variables.$color-text;
+  }
+
+  #sendBtn {
+    @include variables.button-reset;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    background-color: variables.$color-primary-2;
+    color: variables.$color-white;
+    padding: variables.$space-3 variables.$space-5;
+    transition: .3s;
+    font-family: variables.$font-family-base;
+    font-weight: variables.$font-weight-medium;
+
+    &:hover { background-color: variables.$color-primary; }
+  }
+}
+
+.chattings {
+  display: flex;
+  flex-direction: column;
+  padding: variables.$space-4 variables.$space-4;
+  overflow-y: auto;
+  margin-bottom: 30px;
+
+  &::-webkit-scrollbar { width: variables.$scrollbar-width; }
+
+  &::-webkit-scrollbar-thumb {
+    width: variables.$scrollbar-width;
+    border-radius: variables.$radius-sm;
+    background-color: variables.$color-primary;
+  }
+}
+
+.noAccess {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: variables.$font-family-base;
+  color: variables.$color-white;
+  text-align: center;
+  width: 100%;
+  font-size: 2rem;
+  box-sizing: border-box;
+  padding: 0 variables.$space-6;
+}
+
+.serverFull {
+  position: absolute;
+  bottom: 0;
+  color: variables.$color-primary;
+  display: none;
+  font-family: variables.$font-family-base;
+  font-weight: variables.$font-weight-medium;
+  text-align: center;
+  width: 100%;
+
+  &.active {
+    display: flex;
+    justify-content: center;
+  }
+}
