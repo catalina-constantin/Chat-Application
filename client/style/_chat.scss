@@ -14,13 +14,14 @@
   background-color: variables.$color-white;
   box-shadow: variables.$shadow-strong;
   height: variables.$chat-height;
-  border-radius: 0px;
+  border-radius: variables.$radius-lg; 
   margin: auto;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   padding-bottom: variables.$space-7;
   flex-direction: column;
+  overflow: hidden; 
 }
 
 .chatHead {
@@ -28,6 +29,9 @@
   display: flex;
   background-color: variables.$color-primary;
   align-items: center;
+  padding: 8px;
+  border-top-left-radius: variables.$radius-lg;   
+  border-top-right-radius: variables.$radius-lg; 
 
   p {
     margin: variables.$space-4 auto;
@@ -35,11 +39,14 @@
     font-family: variables.$font-family-base;
     color: variables.$color-white;
     font-weight: variables.$font-weight-medium;
+    font-size: 30px;
   }
 }
 
 .usersCount {
   color: variables.$color-white;
+  display: flex;
+  justify-content: center;
   align-items: center;
   position: absolute;
   right: variables.$space-4;
@@ -58,9 +65,11 @@
   max-width: (variables.$container-max-width - variables.$space-4*2);
   position: absolute;
   bottom: 4px;
-  left: 0;
-  margin: 5px 5px; 
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 5px 0;
+  padding: 2px;
+  width: calc(100% - 10px);
 
   input {
     width: 100%;
@@ -69,7 +78,7 @@
     padding: variables.$space-3 60px variables.$space-3 variables.$space-4;
     font-weight: variables.$font-weight-medium;
     font-family: variables.$font-family-base;
-    border: 1px solid variables.$color-primary-2;
+    font-size: 20px;
     color: variables.$color-text;
   }
 

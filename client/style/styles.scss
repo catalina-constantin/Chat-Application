@@ -17,3 +17,63 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.chat-input-form {
+  display: flex;
+  align-items: center;
+  background: rgba(variables.$color-white, 0.85);
+  border-radius: variables.$radius-lg;
+  box-shadow: 0 2px 8px rgba(variables.$color-primary, 0.04);
+  padding: variables.$space-6;
+  gap: variables.$space-6;
+  border: 1.5px solid #edeef2;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.chat-input-form .send-btn {
+  background: none;
+  border: none;
+  color: #3d3d4e;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: variables.$space-2 variables.$space-3;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-input-form .send-btn img {
+  width: 18px;
+  height: 18px;
+  display: block;
+  pointer-events: none;
+}
+
+.chat-input-form .chat-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: variables.$font-size-base;
+  color: variables.$color-text;
+  padding: variables.$space-2 variables.$space-3;
+  font-family: variables.$font-family-base;
+}
+
+.chat-input-form .chat-input::placeholder {
+  color: #b0b3c6;
+  opacity: 1;
+  font-weight: variables.$font-weight-regular;
+}
+
+.duckNoAccess {
+  display: block;
+  margin: 40px auto 16px auto;
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+}

@@ -21,7 +21,6 @@ if (name === null || name.length <= 2) {
     socket.emit('new-user-joined', name)
 }
 
-
 socket.on('userIncrement', data => {
     onUsers.innerText = data
 })
@@ -58,7 +57,7 @@ const appendMessage = (message, user, position, id) => {
 }
 
 socket.on('user-joined', data => {
-    appendAction(`${data.name} Joined the Chat`, 'center')
+    appendAction(`${data.name} joined the Chat`, 'center')
     onUsers.innerText = data.onUsers
 })
 
@@ -81,8 +80,6 @@ socket.on('disconnected',data =>{
     appendAction(`${data.name} left the Chat`,'center')
     onUsers.innerHTML = data.onUsers
 })
-
-
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();

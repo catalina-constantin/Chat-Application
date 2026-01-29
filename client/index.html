@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat App</title>
     <link rel="icon" type="image/png" href="./assets/logo.png">
+    <link href="https://fonts.cdnfonts.com/css/duck" rel="stylesheet">
     <link rel="stylesheet" href="./main.css">
     <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
     <script defer src="./client.js"></script>
@@ -18,13 +19,16 @@
                 <div class="usersCount">
                     <i class="fa-solid fa-user"></i>
                     <span id="onUsers">0</span>
+                    <img src="./assets/user-count.svg" alt="user count icon" style="height: 20px; vertical-align: middle; margin-left: 4px;" />
                 </div>
             </div>
             <div class="chattings" id="chatting">
             </div>
-            <form action="#" id="messageForm">
-                <input type="text" id="messageInput" placeholder="Enter your message">
-                <button id="sendBtn">Send</button>
+            <form action="#" id="messageForm" class="chat-input-form" autocomplete="off">
+                <input type="text" id="messageInput" class="chat-input" placeholder="Your message">
+                <button type="submit" class="send-btn" title="Send">
+                    <img src="./assets/send.svg" alt="Send" />
+                </button>
             </form>
         </div>
     </div>
