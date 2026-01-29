@@ -1,11 +1,6 @@
 # Ducky Duck Chat Application
 
-
 A simple real-time chat application built with Node.js, Express, and Socket.io for the backend, and vanilla JavaScript, HTML, and SCSS for the frontend.
-
-<div align="center">
-  <img src="screenshots/demo.png" alt="App preview" width="30%"/>
-</div>
 
 ## Features
 - Real-time messaging between multiple users
@@ -65,6 +60,9 @@ server/
 ## Usage
 - Enter your name and start chatting in real time with other users connected to the server.
 
+<div align="center">
+  <img src="screenshots/demo.png" alt="App preview" width="100%"/>
+</div>
 
 ## Technologies Used
 - Node.js
